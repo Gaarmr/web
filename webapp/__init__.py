@@ -13,6 +13,11 @@ def create_app():
         title = 'Новости Python'
         weather = weather_by_city(settings.WEATHER_CITY_NAME)
         news = get_python_news()
-        return render_template('index.html', city_name=settings.WEATHER_CITY_NAME, page_title=title, weather_text=weather, news_list=news)
-    
+        return render_template(
+            'index.html', 
+            city_name=settings.WEATHER_CITY_NAME, 
+            page_title=title, 
+            weather_text=weather, 
+            news_list=news
+        )
     return app

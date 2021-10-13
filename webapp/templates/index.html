@@ -23,7 +23,7 @@
                 {% endfor %}
             </div>
             <div class="col-4">
-                <h2>Прогноз погоды</h2>
+                <h2>Прогноз погоды в городе {{ city_name }} </h2>
                 {% if weather_text %}
                     {{ weather_text.temp_C }}, ощущается как {{ weather_text.FeelsLikeC }}
                 {% else %}

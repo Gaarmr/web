@@ -6,7 +6,14 @@
 
 1. Клонировать репозиторий, создать виртуальное окружение
 2. Установить зависимости `pip install -r requirements.txt`
-3. В директории webapp cоздать файл settings.py и добавить него переменные:
+3. В директории webapp cоздать файл settings.py со следующим содержанием:
+    ```
+    import os
+
+    basedir = os.path.abspath(os.path.dirname(__file__))
+    SQLALCHEMY_DATABASE_URI='sqlite:///' + os.path.join(basedir, '..', 'webapp.db')
+    ```
+    И добавить него переменные:
     ```
     WEATHER_API_KEY='Ваш ключ API'
     WEATHER_CITY_NAME='Имя города'

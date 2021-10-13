@@ -13,7 +13,7 @@
     basedir = os.path.abspath(os.path.dirname(__file__))
     SQLALCHEMY_DATABASE_URI='sqlite:///' + os.path.join(basedir, '..', 'webapp.db')
     ```
-    И добавить него переменные:
+    И добавить в него переменные:
     ```
     WEATHER_API_KEY='Ваш ключ API'
     WEATHER_CITY_NAME='Имя города'

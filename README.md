@@ -20,6 +20,8 @@
     WEATHER_URL='http://api.worldweatheronline.com/premium/v1/weather.ashx'
 
     SECRET_KEY = ''
+
+    REMEMBER_COOKIE_DURATION = timedelta(deys=7)
     ```
 4. Для корретной работы выполнить пункты:
     1. Создать -> create_db.py

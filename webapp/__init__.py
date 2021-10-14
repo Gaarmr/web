@@ -51,7 +51,7 @@ def create_app():
         if form.validate_on_submit():
             user = User.query.filter_by(user_name=form.user_name.data).first()
             if user and user.check_password(form.password.data):
-                login_user(user)
+                login_user(user, remember=form.remember_me.data)
                 flash('You have entered the site')
                 return redirect(url_for('index'))
         flash('Invalid username or password')

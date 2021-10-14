@@ -14,7 +14,9 @@ with app.app_context():
 
     password = getpass('Enter password: ')
     password2 = getpass('Repeat password: ')
+    
     if not password == password2:
+        print('Password mismatch')
         sys.exit(0)
 
     new_user = User(user_name=user_name, role='admin')

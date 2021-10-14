@@ -1,5 +1,4 @@
 from flask_wtf import FlaskForm
-from requests.sessions import default_headers
 from wtforms import BooleanField, StringField, PasswordField, SubmitField, HiddenField
 from wtforms.validators import DataRequired
 

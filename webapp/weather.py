@@ -1,10 +1,10 @@
 import requests
-from webapp import settings
+from webapp.settings import WEATHER_API_KEY, WEATHER_CITY_NAME, WEATHER_URL
 
 def weather_by_city(city_name):
-    weather_url = settings.WEATHER_URL
+    weather_url = WEATHER_URL
     params = {
-        'key': settings.WEATHER_API_KEY,
+        'key': WEATHER_API_KEY,
         'q': city_name,
         'format': 'json',
         'num_of_days': 1,
@@ -21,12 +21,12 @@ def weather_by_city(city_name):
                 except(IndexError, TypeError):
                     return False
     except(requests.RequestException, ValueError):
-        print('Network Error')
+        print('Network error. Weather service is temporarily unavailable.')
         return False
     return False
 
 
 
 if __name__ == '__main__':
-    w = weather_by_city(settings.WEATHER_CITY_NAME)
+    w = weather_by_city(WEATHER_CITY_NAME)
     print(w) 

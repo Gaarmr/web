@@ -28,7 +28,9 @@
     2. Получить новости -> get_all_news.py
     3. Создать учётную запись админа в базе -> create_admin.py
 
-5. Команды для запуска сервиса
+5. Запуск
+    Для запуска сервиса использовать run.bat либо команды:
+
     ```
     set FLASK_APP=webapp 
     set FLASK_ENV=development 

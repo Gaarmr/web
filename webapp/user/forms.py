@@ -16,8 +16,8 @@ class RegistrationForm(FlaskForm):
     reg_password2 = PasswordField('Repeat Password', validators=[DataRequired(), EqualTo("reg_password", "Passwords must match")], render_kw={"class": "form-control"})
     submit = SubmitField('Submit', render_kw={"class": "btn btn-primary"})
 
-    def validate_username(self, user_name):
-        users_count = User.query.filter_by(user_name.user_name.data).count()
+    def validate_user_name(self, user_name):
+        users_count = User.query.filter_by(user_name=user_name.data).count()
         if users_count > 0:
             raise ValidationError('Пользователь с таким именем уже зарегистрирован')
     

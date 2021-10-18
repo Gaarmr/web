@@ -65,4 +65,4 @@ def process_reg():
         for field, errors in form.errors.items():
             for error in errors:
                 flash(f'Ошибка в поле "{getattr(form, field).label.text}": - {error}')
-        return redirect(url_for('user.registration'))
+    return redirect(url_for('user.registration'))

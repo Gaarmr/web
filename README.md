@@ -22,6 +22,7 @@
     SECRET_KEY = ''
 
     REMEMBER_COOKIE_DURATION = timedelta(deys=7)
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
     ```
 4. Для корретной работы выполнить пункты:
     1. Создать -> create_db.py

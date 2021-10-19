@@ -26,7 +26,7 @@
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     ```
 5. Для корретной работы выполнить пункты:
-    1. Создать -> create_db.py
+    1. Создать базу данных -> create_db.py
     3. Создать учётную запись админа в базе -> create_admin.py
 
 6. Запуск

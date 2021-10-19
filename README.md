@@ -6,7 +6,8 @@
 
 1. Клонировать репозиторий, создать виртуальное окружение
 2. Установить зависимости `pip install -r requirements.txt`
-3. В директории webapp cоздать файл settings.py со следующим содержанием:
+3. Установить Redis https://github.com/MicrosoftArchive/redis/releases
+4. В директории webapp cоздать файл settings.py со следующим содержанием:
     ```
     import os
 
@@ -24,17 +25,11 @@
     REMEMBER_COOKIE_DURATION = timedelta(deys=7)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     ```
-4. Для корретной работы выполнить пункты:
+5. Для корретной работы выполнить пункты:
     1. Создать -> create_db.py
-    2. Получить новости -> get_all_news.py
     3. Создать учётную запись админа в базе -> create_admin.py
 
-5. Запуск
-    Для запуска сервиса использовать run.bat либо команды:
-
-    ```
-    set FLASK_APP=webapp 
-    set FLASK_ENV=development 
-    set FLASK_DEBUG=1 
-    flask run
-    ```
+6. Запуск
+    1. Для запуска сервиса использовать run.bat
+    2. Для запуска celery использовать run_celery.bat
+    3. Для запуска задач использовать celery -A tasks beat

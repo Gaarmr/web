@@ -11,7 +11,7 @@
                 </div>
                 {% endif %}
             {% endwith %}
-            <h2>Нововсти</h2>
+            <h2>Новости</h2>
             {% for news in news_list %}
                 <h3><a href="{{ url_for('news.single_news', news_id=news.id) }}">{{ news.title }}</a></h3>
                 <p>{{ news.published.strftime('%d.%m.%Y') }}</p>

@@ -30,12 +30,15 @@ def get_news_snippets():
         soup = BeautifulSoup(html, 'html.parser')
         all_news = soup.find('div', class_='tm-articles-list').findAll('article', class_='tm-articles-list__item')
         for news in all_news:
-            title = news.find('h2', class_='tm-article-snippet__title tm-article-snippet__title_h2').text
-            url = news.find('a', class_='tm-article-snippet__title-link')['href']
-            published = news.find('span', class_='tm-article-snippet__datetime-published').text
-            published = parse_habr_date(published)
-            #print(f'{title}, https://habr.com{url}, {published}')
-            save_news(title, 'https://habr.com'+url, published)
+            try:
+                title = news.find('h2', class_='tm-article-snippet__title tm-article-snippet__title_h2').text
+                url = news.find('a', class_='tm-article-snippet__title-link')['href']
+                published = news.find('span', class_='tm-article-snippet__datetime-published').text
+                published = parse_habr_date(published)
+                #print(f'{title}, https://habr.com{url}, {published}')
+                save_news(title, 'https://habr.com'+url, published)
+            except AttributeError:
+                print('Не удалось получить новость. AttributeError')
 
 def get_news_content():
     news_without_text = News.query.filter(News.text.is_(None))

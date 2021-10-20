@@ -22,12 +22,18 @@
 
     SECRET_KEY = ''
 
-    REMEMBER_COOKIE_DURATION = timedelta(deys=7)
+    REMEMBER_COOKIE_DURATION = timedelta(days=7)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     ```
 5. Для корретной работы выполнить пункты:
-    1. Создать базу данных -> create_db.py
-    3. Создать учётную запись админа в базе -> create_admin.py
+    1. Создать базу данных:
+        set FLASK_APP=webapp
+        $env:FLASK_APP = "webapp"
+        flask db init
+        flask db migrate -m ""
+        flask db upgrade 
+
+    2. Создать учётную запись админа в базе -> create_admin.py
 
 6. Запуск
     1. Для запуска сервиса использовать run.bat
